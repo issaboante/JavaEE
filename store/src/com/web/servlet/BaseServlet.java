@@ -27,7 +27,7 @@ public class BaseServlet extends HttpServlet {
 			Method method = class1.getMethod(m, HttpServletRequest.class, HttpServletResponse.class);
 			//让方法执行
 			String s = (String) method.invoke(this, request, response);
-			//判断s是否为空
+			//判断s是否为空 
 			if (s!=null) {
 				request.getRequestDispatcher(s).forward(request, response);
 			}
@@ -36,5 +36,9 @@ public class BaseServlet extends HttpServlet {
 			e.printStackTrace();
 			throw new RuntimeException();
 		} 
+	}
+	
+	public String index(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		return null;
 	}
 }
